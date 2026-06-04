@@ -1,0 +1,39 @@
+﻿"Tabla 1 — Frecuencias, tasas y tiempos importantes",,,,
+,,,,
+Parámetro,Valor,Parte del sistema,Importancia para el proyecto,Fuente / referencia
+Frecuencia de CPU de Teensy 4.0,600 MHz,Microcontrolador Teensy 4.0,"Frecuencia principal de procesamiento; permite adquisición, demodulación digital, cálculo de magnitud/fase y armónicos en tiempo real.",https://www.pjrc.com/store/teensy40.html
+Cristal principal de Teensy 4.0,24 MHz,Reloj base del microcontrolador,Referencia física usada por la Teensy para generar el reloj del sistema mediante PLL interno.,https://www.pjrc.com/store/teensy40.html
+SysTick,1 kHz equivalente,Temporización del sistema,"Genera una base temporal de 1 ms para tareas periódicas no críticas, monitoreo o temporización general.",https://www.pjrc.com/store/teensy40.html
+Velocidad USB device,480 Mbit/s,Comunicación Teensy-PC,Enlace principal para enviar datos procesados a la interfaz gráfica.,https://www.pjrc.com/store/teensy40.html
+Rango de frecuencia lock-in Amplifier,10 Hz – 50 kHz,Referencia del proyecto base,Rango funcional declarado para lock-in amplifier digital; sirve como referencia de desempeño.,https://github.com/OpenLockIn/OLIA
+Frecuencia de modulación interna ,1 Hz – 50 kHz,Modo de referencia interna,La GUI permite modificar la frecuencia de modulación interna dentro de este rango.,https://doi.org/10.3389/fsens.2023.1102176
+Tasa de digitalización por defecto,200 kHz,ADC / adquisición,"Define el límite de Nyquist, la carga computacional y el número de armónicos que pueden calcularse.",https://doi.org/10.3389/fsens.2023.1102176
+Periodo de muestreo asociado,5 µs,ADC / DSP,Corresponde a Ts = 1 / 200000; es la ventana temporal disponible por muestra.,https://doi.org/10.3389/fsens.2023.1102176
+Frecuencia de Nyquist del ADC,100 kHz,Adquisición digital,Mitad de 200 kHz; señales por encima pueden producir aliasing si no se filtran antes del ADC.,Cálculo directo a partir de Fs = 200 kHz
+Filtro anti-aliasing analógico,94 kHz,Acondicionamiento analógico,"Filtro pasa-bajas previo al ADC, ubicado por debajo de Nyquist para atenuar componentes superiores.",https://doi.org/10.3389/fsens.2023.1102176
+Multiplicador de referencia externa,×64,PLL externo / hardware de referencia,Genera 64 ciclos de reloj por cada ciclo TTL de referencia externa.,https://doi.org/10.3389/fsens.2023.1102176 ; https://raw.githubusercontent.com/vcorredorg/Electronic_Design/main/documents/power_tree/power_tree.png
+Divisor de referencia,/64,74HC4060D / referencia,Bloque usado para dividir la señal generada o reconstruir relaciones de referencia.,https://raw.githubusercontent.com/vcorredorg/Electronic_Design/main/documents/power_tree/power_tree.png
+Rango de referencia externa del PLL OLIA,130 Hz – 6 kHz,Modo de referencia externa,Rango de entrada TTL externa para los valores de diseño indicados.,https://doi.org/10.3389/fsens.2023.1102176
+Límite de cambio de estrategia de muestreo externa,1562.5 Hz,Referencia externa,"Por debajo de este valor se toman muestras en flanco de subida y bajada, logrando 128 muestras por ciclo TTL.",https://doi.org/10.3389/fsens.2023.1102176
+Segundo umbral de referencia externa,3125 Hz,Referencia externa,Entre 1562.5 Hz y 3125 Hz se toman 64 muestras por ciclo TTL; por encima se submuestrea.,https://doi.org/10.3389/fsens.2023.1102176
+Muestras por ciclo en referencia externa baja,128 muestras/ciclo,ADC sincronizado,Aplica para f_TTL < 1562.5 Hz; mejora la resolución de fase por ciclo.,https://doi.org/10.3389/fsens.2023.1102176
+Muestras por ciclo en referencia externa media,64 muestras/ciclo,ADC sincronizado,Aplica entre 1562.5 Hz y 3125 Hz.,https://doi.org/10.3389/fsens.2023.1102176
+Muestras por ciclo en referencia externa alta,64/N muestras/ciclo,ADC sincronizado,"Para f_TTL > 3125 Hz, con N = 2, 4, 8, 16, para mantener Fs bajo 200 kHz.",https://doi.org/10.3389/fsens.2023.1102176
+Actualización de datos por USB/GUI,0.1 s = 10 Hz,Interfaz gráfica,"Frecuencia de envío/actualización de valores de magnitud, fase, componentes X/Y y ruido hacia la GUI.",https://doi.org/10.3389/fsens.2023.1102176
+Constante de tiempo configurable,0.01 s – 10 s,Filtro digital,Controla el compromiso entre rechazo de ruido y velocidad de respuesta.,https://doi.org/10.3389/fsens.2023.1102176
+Tiempo de estabilización recomendado,≈ 10τ,Medición lock-in,"Después de cambiar una configuración, se recomienda esperar aproximadamente diez constantes de tiempo.",https://doi.org/10.3389/fsens.2023.1102176
+Límite típico para filtrado síncrono,< 100 Hz,DSP / filtrado,Recomendado principalmente para señales limpias de baja frecuencia.,https://doi.org/10.3389/fsens.2023.1102176
+PWM en Teensy 4.0,"31 pines PWM, 19 grupos de frecuencia",Salidas digitales,"Puede servir para generar señales de referencia, modulación o control; la frecuencia depende de configuración por software.",https://www.pjrc.com/store/teensy40.html
+,,,,
+Tabla 2 — Datos técnicos importantes del proyecto,,,,
+Dato,Valor / descripción,Uso en la exposición,Fuente / referencia,
+Entrada analógica OLIA,−1.6 V a +1.6 V aprox.,Rango bipolar de entrada del proyecto de referencia.,https://github.com/OpenLockIn/OLIA,
+Rango de entrada acondicionado al ADC,0 V – 3.3 V,La señal bipolar se desplaza/acondiciona para ser compatible con el ADC de la Teensy.,https://doi.org/10.3389/fsens.2023.1102176,
+Resolución ADC usada en OLIA,12 bits,Las muestras del ADC se obtienen como enteros de 12 bits y luego se procesan digitalmente.,https://doi.org/10.3389/fsens.2023.1102176,
+Precisión de cálculo,64-bit double,Los cálculos digitales usan doble precisión aprovechando la FPU de la Teensy 4.0.,https://doi.org/10.3389/fsens.2023.1102176,
+Ganancia de entrada OLIA,"0, 1, 2, 4, 8, 16, 32, 64",Permite adaptar señales pequeñas o grandes al rango útil del ADC.,https://doi.org/10.3389/fsens.2023.1102176,
+Armónicos por defecto en OLIA,"Fundamental + armónicos 2, 3 y 4",A 200 kHz hay margen computacional para analizar tres armónicos adicionales además de la fundamental.,https://doi.org/10.3389/fsens.2023.1102176,
+Armónicos si se reduce muestreo,Hasta 7 armónicos superiores a 100 kHz,"Al bajar la frecuencia de muestreo aumenta el tiempo disponible por muestra, permitiendo calcular más armónicos.",https://doi.org/10.3389/fsens.2023.1102176,
+Alimentación principal en el power tree,"USB 5 V, 500 mA máx.",Fuente general del sistema según el diagrama de potencia del repositorio.,https://raw.githubusercontent.com/vcorredorg/Electronic_Design/main/documents/power_tree/power_tree.png,
+Consumo estimado Teensy en el power tree,"≈ 136 mA, ≈ 0.675 W",Dato útil para justificar el presupuesto de potencia de la placa.,https://raw.githubusercontent.com/vcorredorg/Electronic_Design/main/documents/power_tree/power_tree.png,
+Interfaz de usuario,GUI para visualización y configuración,"Permite observar magnitud, fase, armónicos y modificar parámetros de usuario.",https://github.com/vcorredorg/Electronic_Design/tree/main,
