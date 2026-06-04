@@ -33,65 +33,52 @@ The project also aims to document the complete engineering development process, 
 
 ## Repository Structure
 
-The repository is organized to separate firmware, interface, hardware resources, documentation, tests, and external references. The proposed structure is shown below:
+The repository is organized to separate hardware design files, technical documentation, embedded firmware, and the graphical user interface. The structure follows the general organization of the OLIA reference project, which separates firmware, GUI, board files, and documentation, while adapting it to this Teensy 4.0 + Zephyr + PlatformIO implementation.
 
 ```text
 .
 ├── README.md
 ├── LICENSE
-├── platformio.ini
+├── .gitignore
+│
+├── altium/
+│   ├── files/
+│   └── gerbers.zip
+│
+├── documents/
+│   ├── application_note.pdf
+│   └── power_tree/
 │
 ├── firmware/
-│   ├── teensy40/
-│   │   ├── src/
-│   │   │   ├── main.cpp
-│   │   │   ├── acquisition/
-│   │   │   ├── processing/
-│   │   │   ├── reference/
-│   │   │   ├── harmonics/
-│   │   │   ├── communication/
-│   │   │   └── configuration/
-│   │   ├── include/
-│   │   ├── lib/
-│   │   ├── boards/
-│   │   └── zephyr/
-│   │
-│   └── README.md
+│   └── lockin_teensy40_zephyr_nolibm/
+│       ├── CMakeLists.txt
+│       ├── boards/
+│       ├── include/
+│       ├── zephyr/
+│       │   └── CMakeLists.txt
+│       └── src/
+│           ├── main.c
+│           ├── app/
+│           │   ├── control.c
+│           │   ├── control.h
+│           │   ├── serial_protocol.c
+│           │   └── serial_protocol.h
+│           ├── dsp/
+│           │   ├── lockin_core.c
+│           │   └── lockin_core.h
+│           └── hal/
+│               ├── adc_backend.c
+│               ├── adc_backend.h
+│               ├── gpio_backend.c
+│               ├── gpio_backend.h
+│               ├── pwm_backend.c
+│               ├── pwm_backend.h
+│               ├── uart_backend.c
+│               └── uart_backend.h
 │
-├── interface/
-│   ├── src/
-│   ├── assets/
-│   ├── config/
-│   └── README.md
-│
-├── hardware/
-│   ├── schematics/
-│   ├── diagrams/
-│   ├── wiring/
-│   ├── datasheets/
-│   └── README.md
-│
-├── docs/
-│   ├── requirements/
-│   ├── architecture/
-│   ├── state-diagrams/
-│   ├── signal-processing/
-│   ├── user-interface/
-│   ├── testing/
-│   └── references/
-│
-├── tests/
-│   ├── firmware/
-│   ├── interface/
-│   ├── signal-processing/
-│   └── validation/
-│
-├── tools/
-│   ├── scripts/
-│   └── utilities/
-│
-└── external/
-    └── OLIA/
+└── gui/
+    ├── lockin_gui.py
+    └── requirements.txt
 ```
 
 Suggested directory purpose:
