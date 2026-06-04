@@ -1,3 +1,4 @@
+# Lock-in Amplifier
 ## Overview
 
 This repository contains the development files, documentation, firmware, and interface resources for a digital lock-in amplifier based on the open-source OLIA architecture. The project implements a compact embedded instrumentation system capable of extracting amplitude, phase, and harmonic information from weak periodic signals using synchronous detection techniques.
