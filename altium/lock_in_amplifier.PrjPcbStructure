@@ -1,0 +1,3 @@
+Record=TopLevelDocument|FileName=main.SchDoc|SheetNumber=1
+Record=SheetSymbol|SourceDocument=main.SchDoc|Designator=MAIN|SchDesignator=MAIN|FileName=lock_in_amplifier.SchDoc|SheetNumber=2|SymbolType=Normal|RawFileName=lock_in_amplifier.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=main.SchDoc|Designator=POWER|SchDesignator=POWER|FileName=power_supply.SchDoc|SheetNumber=3|SymbolType=Normal|RawFileName=power_supply.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
