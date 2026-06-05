@@ -78,13 +78,8 @@ The repository is organized to separate hardware design files, technical documen
 Suggested directory purpose:
 
 * `firmware/`: contains the embedded code for the Teensy 4.0, including acquisition, demodulation, harmonic calculation, configuration handling, and communication modules.
-* `interface/`: contains the graphical interface used to visualize magnitude, phase, and harmonic data, and to configure user parameters.
 * `hardware/`: contains connection diagrams, schematics, wiring references, datasheets, and hardware-related notes.
-* `docs/`: contains the formal project documentation, including requirements, architecture, state diagrams, design explanations, and testing records.
-* `tests/`: contains firmware tests, interface tests, signal-processing validation files, and experimental verification procedures.
-* `tools/`: contains auxiliary scripts or utilities used for data processing, testing, configuration, or development automation.
-* `external/`: may contain the original OLIA reference project, submodules, or external design references used during development.
-
+* `documents/`: contains the formal project documentation, including requirements, architecture, state diagrams, design explanations, and testing records.
 ## Technologies Used
 
 * **Teensy 4.0**
