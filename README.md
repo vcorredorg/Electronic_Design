@@ -50,10 +50,6 @@ The repository is organized to separate hardware design files, technical documen
 ├── firmware/
 │   └── lockin_teensy40_zephyr/
 │       ├── CMakeLists.txt
-│       ├── boards/
-│       ├── include/
-│       ├── zephyr/
-│       │   └── CMakeLists.txt
 │       └── src/
 │           ├── main.c
 │           ├── app/
