@@ -1,22 +1,6 @@
 cmake_minimum_required(VERSION 3.13.1)
-find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
-project(lockin_teensy40_zephyr)
+include($ENV{ZEPHYR_BASE}/cmake/app/boilerplate.cmake NO_POLICY_SCOPE)
+project(lockin_teensy40_zephyr_nolibm)
 
-target_include_directories(app PRIVATE
-    include
-    src
-    src/app
-    src/dsp
-    src/hal
-)
-
-target_sources(app PRIVATE
-    src/main.c
-    src/app/control.c
-    src/app/serial_protocol.c
-    src/dsp/lockin_core.c
-    src/hal/adc_backend.c
-    src/hal/gpio_backend.c
-    src/hal/pwm_backend.c
-    src/hal/uart_backend.c
-)
+FILE(GLOB app_sources ../src/*.c*)
+target_sources(app PRIVATE ${app_sources})
