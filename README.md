@@ -48,7 +48,6 @@ The repository is organized to separate hardware design files, technical documen
 │   └── power_tree/
 │
 ├── firmware/
-│   └── lockin_teensy40_zephyr/
 │       ├── CMakeLists.txt
 │       └── src/
 │           ├── main.c
