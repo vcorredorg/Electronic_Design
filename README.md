@@ -81,7 +81,7 @@ Suggested directory purpose:
 
 * `firmware/`: contains the embedded code for the Teensy 4.0, including acquisition, demodulation, harmonic calculation, configuration handling, and communication modules.
 * `hardware/`: contains connection diagrams, schematics, wiring references, datasheets, and hardware-related notes.
-* `documents/`: contains the formal project documentation, including requirements, architecture, state diagrams, design explanations, and testing records.
+* `documents/`: contains the formal project documentation, including requirements, architecture, state diagram and design explanations.
 ## Technologies Used
 
 * **Teensy 4.0**
