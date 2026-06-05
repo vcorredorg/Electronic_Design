@@ -38,8 +38,6 @@ The repository is organized to separate hardware design files, technical documen
 ```text
 .
 ├── README.md
-├── LICENSE
-├── .gitignore
 │
 ├── altium/
 │   ├── files/
@@ -50,7 +48,7 @@ The repository is organized to separate hardware design files, technical documen
 │   └── power_tree/
 │
 ├── firmware/
-│   └── lockin_teensy40_zephyr_nolibm/
+│   └── lockin_teensy40_zephyr/
 │       ├── CMakeLists.txt
 │       ├── boards/
 │       ├── include/
