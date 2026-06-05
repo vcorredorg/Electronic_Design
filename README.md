@@ -46,6 +46,9 @@ The repository is organized to separate hardware design files, technical documen
 ├── documents/
 │   ├── application_note.pdf
 │   └── power_tree/
+|   └── block diagram
+|   └──slides
+|   └──technical_data.csv
 │
 ├── firmware/
 │       ├── CMakeLists.txt
